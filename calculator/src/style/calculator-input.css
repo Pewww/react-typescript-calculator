@@ -1,0 +1,11 @@
+.input-cover {
+    text-align: right;
+    margin-top: 4rem;
+}
+
+.input-cover > span {
+    color: rgb(101, 101, 101);
+    font-size: 1.5rem;
+    padding-right: 1.5rem;
+    letter-spacing: 2px;
+}

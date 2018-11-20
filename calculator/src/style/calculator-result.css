@@ -1,0 +1,11 @@
+.calculator-result {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.calculator-result > span {
+    color: rgb(101, 101, 101);
+    font-size: 2.5rem;
+    padding-right: 1.35rem;
+    font-weight: 600;
+}
