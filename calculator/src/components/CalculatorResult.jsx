@@ -1,10 +1,12 @@
 import React from 'react';
 import '../style/calculator-result.css';
 
-const CalculatorResult = ({result}) => {
+const CalculatorResult = ({ result }) => {
     return (
         <div className="calculator-result">
-            <span>{ result }</span>
+            <span>
+                { result }
+            </span>
         </div>
     );
 }

@@ -101,7 +101,7 @@ const CalcButtons = ({appendState, deleteAll, showResult, popStatement}) => {
                     </td>
                     <td>
                         <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>00</span> 
+                            <span style={{fontSize: '2rem', marginTop: '-11px'}}>.</span> 
                         </div>
                     </td>
                     <td colSpan="2">
