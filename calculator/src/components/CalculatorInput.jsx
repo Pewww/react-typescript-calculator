@@ -1,10 +1,10 @@
 import React from 'react';
-import '../style/calculator-input.css';
+import '../style/calculator-input.scss';
 
 const CalculatorInput = ({ alignment }) => {
     return (
-        <div className="input-cover">
-            <span>{ alignment }</span>
+        <div className="calculator-input">
+            <span className="calculator-input__alignment-text">{ alignment }</span>
         </div>
     );
 }

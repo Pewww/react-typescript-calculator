@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CalculatorInput from './CalculatorInput';
 import CalculatorResult from './CalculatorResult';
 import CalcButtons from './CalcButtons';
-import '../style/calculator.css';
+import '../style/calculator.scss';
 
 const SPLIT_STATEMENT_REGEX = /[^\d()]+|[\d.]+/g;
 
@@ -148,7 +148,7 @@ export default class Calculator extends Component {
             const splitStatement = currentStatement.match(SPLIT_STATEMENT_REGEX);
             
             // 정규식으로 분리한 배열의 마지막 요소가 .을 포함하고 있으면 flag는 false
-            this.setState({
+            splitStatement && this.setState({
                 isSpotFlag: !splitStatement[splitStatement.length - 1].includes('.')
             });
         }

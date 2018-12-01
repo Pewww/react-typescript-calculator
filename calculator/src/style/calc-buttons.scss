@@ -1,0 +1,48 @@
+@import '../style/settings.scss';
+
+.calc-buttons {
+    width: 100%;
+    margin-top: 1rem;
+    height: 21.5rem;
+
+    .buttons {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(101, 101, 101);
+        font-size: 1.5rem;
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+
+        &:hover {
+            animation: buttons .5s forwards;
+        }
+
+        @include m('gray') {
+            background-color: #f3f3f3;
+        }
+
+        @include m('equal') {
+            width: 6.2rem;
+            border-radius: 50px;
+            background-color: rgb(255, 203, 138);
+            box-shadow: 5px 5px 10px rgb(254, 238, 215);
+            color: #fff;
+        }
+    }
+}
+
+@keyframes buttons {
+    50% {
+        transform: scale(.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

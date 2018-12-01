@@ -1,35 +1,40 @@
 import React from 'react';
-import '../style/calc-buttons.css';
+import '../style/calc-buttons.scss';
 
-const CalcButtons = ({appendState, deleteAll, showResult, popStatement}) => {
+const CalcButtons = ({
+    appendState,
+    deleteAll,
+    showResult,
+    popStatement
+}) => {
     return (
         <table className="calc-buttons">
             <tbody>
                 <tr>
                     <td>
                         <button
-                            className="buttons gray"
+                            className="buttons buttons--gray"
                             onClick={deleteAll}
                             value="c"
                         >c</button>
                     </td>
                     <td>
                         <button
-                            className="buttons gray"
+                            className="buttons buttons--gray"
                             onClick={(e) => appendState(e)}
                             value="%"
                         >%</button>
                     </td>
                     <td>
                         <button
-                            className="buttons gray"
+                            className="buttons buttons--gray"
                             onClick={(e) => appendState(e)}
                             value="/"
                         >/</button>
                     </td>
                     <td>
                         <button
-                            className="buttons gray"
+                            className="buttons buttons--gray"
                             onClick={(e) => appendState(e)}
                             value="x"
                         >x</button>
@@ -59,7 +64,7 @@ const CalcButtons = ({appendState, deleteAll, showResult, popStatement}) => {
                     </td>
                     <td>
                         <button
-                            className="buttons gray"
+                            className="buttons buttons--gray"
                             onClick={(e) => appendState(e)}
                             value="-"
                         >-</button>
@@ -89,7 +94,7 @@ const CalcButtons = ({appendState, deleteAll, showResult, popStatement}) => {
                     </td>
                     <td>
                         <button
-                            className="buttons gray"
+                            className="buttons buttons--gray"
                             onClick={(e) => appendState(e)}
                             value="+"
                         >+</button>
@@ -119,7 +124,7 @@ const CalcButtons = ({appendState, deleteAll, showResult, popStatement}) => {
                     </td>
                     <td>
                         <button
-                            className="buttons gray"
+                            className="buttons buttons--gray"
                             onClick={popStatement}
                             value="<"
                         >{'<'}</button>
@@ -143,7 +148,7 @@ const CalcButtons = ({appendState, deleteAll, showResult, popStatement}) => {
                     </td>
                     <td colSpan="2">
                         <button
-                            className="buttons equal"
+                            className="buttons buttons--equal"
                             onClick={showResult}
                             value="="
                         >=</button>
