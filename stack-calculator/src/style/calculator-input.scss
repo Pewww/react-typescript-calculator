@@ -1,0 +1,13 @@
+@import './settings.scss';
+
+.calculator-input {
+    text-align: right;
+    margin-top: 4rem;
+
+    @include e('alignment-text') {
+        color: rgb(101, 101, 101);
+        font-size: 1.35rem;
+        padding-right: 1.5rem;
+        letter-spacing: 2px;
+    }
+}

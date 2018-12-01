@@ -1,0 +1,13 @@
+@import './settings.scss';
+
+.calculator-result {
+    margin-top: 1rem;
+    text-align: right;
+
+    @include e('result') {
+        color: rgb(101, 101, 101);
+        font-size: 2rem;
+        padding-right: 1.35rem;
+        font-weight: 600;
+    }
+}

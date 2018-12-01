@@ -6,5 +6,29 @@
       "node_modules/**/*.ts",
       "coverage/lcov-report/*.js"
     ]
+  },
+  "rules": {
+    "member-access": [true, "no-public"],
+    "no-unused-variable": true,
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "array-bracket-spacing": [true, "never"],
+    "object-curly-spacing": [true, "never"],
+    "indent": [
+      true,
+      "spaces",
+      4
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double",
+      "avoid-template"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "ordered-imports": [false],
+    "object-literal-sort-keys": [false]
   }
 }
