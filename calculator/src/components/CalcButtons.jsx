@@ -7,107 +7,146 @@ const CalcButtons = ({appendState, deleteAll, showResult, popStatement}) => {
             <tbody>
                 <tr>
                     <td>
-                        <div className="buttons gray" onClick={deleteAll}>
-                            <span>c</span>
-                        </div>
+                        <button
+                            className="buttons gray"
+                            onClick={deleteAll}
+                            value="c"
+                        >c</button>
                     </td>
                     <td>
-                        <div className="buttons gray" onClick={(e) => appendState(e)}>
-                            <span>%</span>
-                        </div>
+                        <button
+                            className="buttons gray"
+                            onClick={(e) => appendState(e)}
+                            value="%"
+                        >%</button>
                     </td>
                     <td>
-                        <div className="buttons gray" onClick={(e) => appendState(e)}>
-                            <span>/</span>
-                        </div>
+                        <button
+                            className="buttons gray"
+                            onClick={(e) => appendState(e)}
+                            value="/"
+                        >/</button>
                     </td>
                     <td>
-                        <div className="buttons gray" onClick={(e) => appendState(e)}>
-                            <span>x</span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>7</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>8</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>9</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="buttons gray" onClick={(e) => appendState(e)}>
-                            <span>-</span>
-                        </div>
+                        <button
+                            className="buttons gray"
+                            onClick={(e) => appendState(e)}
+                            value="x"
+                        >x</button>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>4</span>
-                        </div>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="7"
+                        >7</button>
                     </td>
                     <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>5</span>
-                        </div>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="8"
+                        >8</button>
                     </td>
                     <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>6</span>
-                        </div>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="9"
+                        >9</button>
                     </td>
                     <td>
-                        <div className="buttons gray" onClick={(e) => appendState(e)}>
-                            <span>+</span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>1</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>2</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>3</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="buttons gray" onClick={popStatement}>
-                            <span>{'<'}</span>
-                        </div>
+                        <button
+                            className="buttons gray"
+                            onClick={(e) => appendState(e)}
+                            value="-"
+                        >-</button>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span>0</span>
-                        </div>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="4"
+                        >4</button>
                     </td>
                     <td>
-                        <div className="buttons" onClick={(e) => appendState(e)}>
-                            <span style={{fontSize: '2rem', marginTop: '-11px'}}>.</span> 
-                        </div>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="5"
+                        >5</button>
+                    </td>
+                    <td>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="6"
+                        >6</button>
+                    </td>
+                    <td>
+                        <button
+                            className="buttons gray"
+                            onClick={(e) => appendState(e)}
+                            value="+"
+                        >+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="1"
+                        >1</button>
+                    </td>
+                    <td>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="2"
+                        >2</button>
+                    </td>
+                    <td>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="3"
+                        >3</button>
+                    </td>
+                    <td>
+                        <button
+                            className="buttons gray"
+                            onClick={popStatement}
+                            value="<"
+                        >{'<'}</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="0"
+                        >0</button>
+                    </td>
+                    <td>
+                        <button
+                            className="buttons"
+                            onClick={(e) => appendState(e)}
+                            value="."
+                            style={{ fontSize: '2rem', marginTop: '-11px' }}
+                        >.</button>
                     </td>
                     <td colSpan="2">
-                        <div className="buttons equal" onClick={showResult}>
-                            <span>=</span> 
-                        </div>
+                        <button
+                            className="buttons equal"
+                            onClick={showResult}
+                            value="="
+                        >=</button>
                     </td>
                 </tr>
             </tbody>

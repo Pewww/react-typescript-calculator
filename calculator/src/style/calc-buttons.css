@@ -13,6 +13,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border: 0;
+    background-color: transparent;
 }
 
 .buttons:hover {
@@ -29,7 +31,7 @@
     }
 }
 
-.buttons > span {
+.buttons {
     color: rgb(101, 101, 101);
     font-size: 1.5rem;
 }
@@ -43,8 +45,5 @@
     border-radius: 50px;
     background-color: rgb(255, 203, 138);
     box-shadow: 5px 5px 10px rgb(254, 238, 215);
-}
-
-.equal > span {
     color: #fff;
 }

@@ -1,5 +1,6 @@
 .calculator {
     width: 75vw;
+    min-height: 34rem;
     height: 73vh;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, .03);
     position: absolute;
