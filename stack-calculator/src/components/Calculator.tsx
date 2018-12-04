@@ -114,7 +114,7 @@ export default class Calculator extends React.Component {
 
     calcPostFix = (outputQueue: OutputQueue[]) => {
         const stack: number[] = [];
-        const CALC_FUNC = {
+        const calcPopNumbers = {
             'x': (num1: number, num2: number): number => num2 * num1,
             '/': (num1: number, num2: number): number => num2 / num1,
             '%': (num1: number, num2: number): number => num2 % num1,
@@ -128,7 +128,7 @@ export default class Calculator extends React.Component {
             if (this.isCheckOperand(element as string)) {
                 const num1 = stack.pop();
                 const num2 = stack.pop();
-                stack.push(CALC_FUNC[element](num1, num2));
+                stack.push(calcPopNumbers[element](num1, num2));
             } else {
                 stack.push(parseFloat(element as string));   
             }
