@@ -152,6 +152,7 @@ export default class Calculator extends React.Component {
     }
 
     popStatement = (): void => {
+        // TODO: setState 콜백 구문에 다시 setState를 하는 좋지 않은 코드 수정
         const { statement } = this.state;
         
         const changeSpotFlag = () => {
