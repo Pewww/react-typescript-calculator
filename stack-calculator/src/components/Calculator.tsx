@@ -14,6 +14,24 @@ interface IState {
 
 type OutputQueue = string | number;
 
+const OPERATOR_PRIORITY = {
+    '%': 3,
+    'x': 2,
+    '/': 2,
+    '+': 1,
+    '-': 1
+};
+
+const calcPopNumbers = {
+    'x': (num1: number, num2: number): number => num2 * num1,
+    '/': (num1: number, num2: number): number => num2 / num1,
+    '%': (num1: number, num2: number): number => num2 % num1,
+    '+': (num1: number, num2: number): number => num2 + num1,
+    '-': (num1: number, num2: number): number => num2 - num1
+};
+
+// TODO: 로직 자체의 리팩토링
+
 export default class Calculator extends React.Component {
     state: IState = {
         statement: '',
@@ -75,14 +93,6 @@ export default class Calculator extends React.Component {
     }
 
     comparePriority = (op1: string, op2: string): boolean => {
-        const OPERATOR_PRIORITY = {
-            '%': 3,
-            'x': 2,
-            '/': 2,
-            '+': 1,
-            '-': 1
-        };
-
         return OPERATOR_PRIORITY[op1] >= OPERATOR_PRIORITY[op2];
     }
 
@@ -99,6 +109,7 @@ export default class Calculator extends React.Component {
                 while (stack.length && this.comparePriority(stackPeek, element)) {
                     outputQueue.push(stack.pop());
                 }
+
                 stack.push(element);
             } else {
                 outputQueue.push(element);
@@ -114,13 +125,6 @@ export default class Calculator extends React.Component {
 
     calcPostFix = (outputQueue: OutputQueue[]) => {
         const stack: number[] = [];
-        const calcPopNumbers = {
-            'x': (num1: number, num2: number): number => num2 * num1,
-            '/': (num1: number, num2: number): number => num2 / num1,
-            '%': (num1: number, num2: number): number => num2 % num1,
-            '+': (num1: number, num2: number): number => num2 + num1,
-            '-': (num1: number, num2: number): number => num2 - num1
-        };
 
         for (let idx = 0, queueLeng = outputQueue.length; idx < queueLeng; idx++) {
             const element = outputQueue[idx];
@@ -144,31 +148,23 @@ export default class Calculator extends React.Component {
         const lastElement = statement[statement.length - 1];
 
         // 유효성 검사 / 결과 출력
-        this.isCheckOperand(lastElement)
-            ?
-            this.setState({ calcResult: 'Validation Error' })
-            :
+        this.isCheckOperand(lastElement) ?
+            this.setState({ calcResult: 'Validation Error' }) :
             this.calcPostFix(this.postFixNotation(statement));
     }
 
     popStatement = (): void => {
-        // TODO: setState 콜백 구문에 다시 setState를 하는 좋지 않은 코드 수정
-        const { statement } = this.state;
-        
-        const changeSpotFlag = () => {
-            // 구분 짓기 위해 변수명 변경 - 바꾸지 않아도 무방
-            const { statement: currentStatement } = this.state;
-            const splitStatement = currentStatement.match(SPLIT_STATEMENT_REGEX);
-            
-            // 정규식으로 분리한 배열의 마지막 요소가 .을 포함하고 있으면 flag는 false
-            splitStatement && this.setState({
-                isSpotFlag: !splitStatement[splitStatement.length - 1].includes('.')
-            });
-        }
+        const { statement } = this.state,
+              statementLeng = statement.length;
+
+        const targetStatement = statement.substring(0, statementLeng - 1),
+              splitStatement = targetStatement.match(SPLIT_STATEMENT_REGEX),
+              splitLeng = splitStatement.length;
 
         this.setState({
-            statement: statement.substring(0, statement.length - 1)
-        }, () => changeSpotFlag());
+            statement: targetStatement,
+            isSpotFlag: splitStatement && !splitStatement[splitLeng - 1].includes('.')
+        });
     }
 
     render() {
